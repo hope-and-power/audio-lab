@@ -1,18 +1,25 @@
+# Generates fractals with a GUI
+
 import numpy as np
 import matplotlib.pyplot as plt
 import Tkinter as tk
 import cv2, time
 #----------------------------------------------------------------------------------------#		   	
-resX, resY = 600, 600 # resolution
-domX, domY = 1, 1 # size of complex domain
+resX, resY = 6, 6 			# resolution
+lowX, highX, lowY, highY = -1, 1, -1, 1	# size of complex domain
+nIt = 9					# how many times to iterate the Z-function
+Z = lambda z: z*(z-1)			# our iterated Z-function TODO make a string input for GUI -> Z
 
-z = np.array([[complex(x,y) for y in np.arange(-domY, domY, float(2*domY)/resY)]
-			  				for x in np.arange(-domX, domX, float(2*domX)/resX)])
+z = np.empty(shape=(resX,resY), dtype=complex)	# initialize pointset matrix
+for y in range(resY):			# loop over all relevant x,y
+	for x in range(resX):
+		yval = (float(y)/resY) * (highY-lowY) + lowY
+		xval = (float(x)/resX) * (highX-lowX) + lowX
+		z[x,y] = complex(xval,yval)
 
-
-s = time.time()			  				
-for i in range(9): z = z * (z - 1)
-print time.time() - s
+s = time.time()			  	# start timer			
+z = Z(z) for i in range(nIt)		# apply function nIt times
+print time.time() - s			# how long did that take?
 r = np.abs(z) 
 
 hsv = np.concatenate(((np.angle(z) + np.pi/2)[:,:,None],		# hue
