@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import Tkinter as tk
 import cv2, time
 #----------------------------------------------------------------------------------------#		   	
-resX, resY = 6, 6 			# resolution
+resX, resY = 300, 300 			# resolution
 lowX, highX, lowY, highY = -1, 1, -1, 1	# size of complex domain
 nIt = 9					# how many times to iterate the Z-function
 Z = lambda z: z*(z-1)			# our iterated Z-function TODO make a string input for GUI -> Z
