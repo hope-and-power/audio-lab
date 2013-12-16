@@ -1,0 +1,20 @@
+tsig = 4,4
+numMeas = 4
+
+# drum
+drumA-1:1	2	3	4	|
+drumA-2:1	2	3   +	4	|
+drumA-3:1	2   +	3   +	4   +	|
+drumA-4:1	2	3   +	4	|
+
+# snare
+drumB-1:1 . + . 2	3 . + . 4	|
+drumB-2:1	2	3 . + . 4	|
+drumB-3:    +	2   +   3	4   +...|
+drumB-4:1   +	2	3	4   +   |
+
+# ride cymbal
+drumC-1:1   	2	3	4	|
+drumC-2:1	2	3	4	|
+drumC-3:1	2	3	4	|
+drumC-4:1	2	3	4	|
