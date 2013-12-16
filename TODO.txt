@@ -1,4 +1,0 @@
-make the screen work
-make a video_generator
-make the Lorenz waterwheel w/ sound
-set up the GitHub for algorithmusical
